@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="initial-scale=1.0, width=device-width" name="viewport">
+	<title>Dashboard</title>
+
+	<!-- css -->
+	<link href="css/base.min.css" rel="stylesheet">
+
+	<!-- css for this project -->
+	<link href="css/project.min.css" rel="stylesheet">
+
+	<!-- favicon -->
+	<!-- ... -->
+
+	<!-- ie -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+</head>
+<body class="avoid-fout page-brand">
+	<script type="text/javascript">
+   <!--
+      // Form validation code will come here.
+      function validate()
+      {
+      
+         if( document.myForm.onion.value == "" )
+         {
+            alert( "Please provide onion price!" );
+            document.myForm.title.focus() ;
+            return false;
+         }
+         
+         if( document.myForm.potato.value == "" )
+         {
+            alert( "Please provide potato price!" );
+            document.myForm.message.focus() ;
+            return false;
+         }
+         if( document.myForm.tomato.value == "" )
+         {
+            alert( "Please provide tomato price!" );
+            document.myForm.expiry.focus() ;
+            return false;
+         }
+         if( document.myForm.cabbage.value == "" )
+         {
+            alert( "Please provide cabbage price!" );
+            document.myForm.expiry.focus() ;
+            return false;
+         }
+         if( document.myForm.beans.value == "" )
+         {
+            alert( "Please provide beans price!" );
+            document.myForm.expiry.focus() ;
+            return false;
+         }
+         return( true );
+      }
+   //-->
+</script>
+  <div class="avoid-fout-indicator avoid-fout-indicator-fixed">
+		<div class="progress-circular progress-circular-center">
+			<div class="progress-circular-wrapper">
+				<div class="progress-circular-inner">
+					<div class="progress-circular-left">
+						<div class="progress-circular-spinner"></div>
+					</div>
+					<div class="progress-circular-gap"></div>
+					<div class="progress-circular-right">
+						<div class="progress-circular-spinner"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<header class="header header-transparent header-waterfall">
+		<ul class="nav nav-list pull-left">
+			<li>
+			<!-- 	<a data-toggle="menu" href="#menu"> -->
+          <a data-toggle="menu" >
+					<span class="icon icon-lg">menu</span>
+				</a>
+			</li>
+		</ul>
+		<a class="header-logo margin-left-no">Google Material Design</a>
+		<div class="header-affix pull-left" data-offset-top="108" data-spy="affix">
+			<span class="header-text margin-left-no">
+				<i class="icon margin-right">chevron_right</i>Dashborad
+			</span>
+		</div>
+		
+	</header>
+	<!-- <nav aria-hidden="true" class="menu" id="menu" tabindex="-1">
+		<div class="menu-scroll">
+			<div class="menu-content">
+				<a class="menu-logo" href="/">Main Site</a>
+				<ul class="nav">
+					<li>
+        
+              <a class="waves-attach" href="/logout">Logout</a>
+           
+			
+					</li>
+					
+					
+				</ul>	
+			</div>
+		</div>
+	</nav> -->
+	
+	<div class="content">
+		<div class="content-heading">
+			<div class="container">
+				<h1 class="heading">Dashboard</h1>
+			</div>
+		</div>
+		<div class="container">
+      <form name="myform" method="post" onsubmit="return(validate());" action="/adminkiran">
+			<section class="content-inner">
+				<h2 class="content-sub-heading">Vegetable list</h2>
+				<div class="card-wrap">
+					<div class="row">
+						<div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="card">
+                <div class="card-main">
+                  <div class="card-inner">
+                    <p class="card-heading">Onion</p>
+                    <input class="form-control" name="onion" value="{{c1.onion}}" type="text">
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="card">
+                <div class="card-main">
+                  <div class="card-inner">
+                    <p class="card-heading">Potato</p>
+                    <input class="form-control" name="potato" value="{{c1.potato}}" type="text">
+                  
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="card">
+                <div class="card-main">
+                  <div class="card-inner">
+                    <p class="card-heading">Tomato</p>
+                    <input class="form-control" name="tomato" value="{{c1.tomato}}" type="text">
+                  
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="card">
+                <div class="card-main">
+                  <div class="card-inner">
+                    <p class="card-heading">Cabbage</p>
+                   <input class="form-control" name="cabbage" value="{{c1.cabbage}}" type="text">
+                  
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="card">
+                <div class="card-main">
+                  <div class="card-inner">
+                    <p class="card-heading">Beans</p>
+                    <input class="form-control" name="beans" value="{{c1.beans}}" type="text">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+				</div>
+			</section>
+      <button type="submit" class="btn btn-block btn-brand waves-attach waves-button">Update Price</button>
+    </form>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="container">
+			<p>Powered by <a href="http://cloudclovis.com" target="_blank">CloudClovis</a></p>
+		</div>
+	</footer>
+	<div class="fbtn-container">
+		<div class="fbtn-inner">
+			<a class="fbtn fbtn-brand-accent fbtn-lg" data-toggle="dropdown"><span class="fbtn-text">Links</span><span class="fbtn-ori icon">add</span><span class="fbtn-sub icon">close</span></a>
+			<div class="fbtn-dropdown">
+				<a class="fbtn" href="/logout"><span class="fbtn-text">Logout</span><span class="icon">power_settings_new</span></a>
+				<a class="fbtn fbtn-alt" href="tel:+919022744480"><span class="fbtn-text">Call support team</span><span class="icon">call</span></a>
+			</div>
+		</div>
+	</div>
+
+	<!-- js -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/base.min.js"></script>
+
+	<!-- js for this project -->
+	<script src="js/project.min.js"></script>
+</body>
+</html>

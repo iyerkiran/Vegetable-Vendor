@@ -1,0 +1,77 @@
+<html>
+<head>
+	<title>Dashboard</title>
+</head>
+<body>
+	<p>This is your dashboard</p>
+	{% if user %}
+      {{user.name}} (<a href="/logout">logout</a>)
+    {% endif %}
+	<br/>	
+	 </br>
+	  <script type="text/javascript">
+   <!--
+      // Form validation code will come here.
+      function validate()
+      {
+      
+         if( document.myForm.onion.value == "" )
+         {
+            alert( "Please provide onion price!" );
+            document.myForm.title.focus() ;
+            return false;
+         }
+         
+         if( document.myForm.potato.value == "" )
+         {
+            alert( "Please provide potato price!" );
+            document.myForm.message.focus() ;
+            return false;
+         }
+         if( document.myForm.tomato.value == "" )
+         {
+            alert( "Please provide tomato price!" );
+            document.myForm.expiry.focus() ;
+            return false;
+         }
+         if( document.myForm.cabbage.value == "" )
+         {
+            alert( "Please provide cabbage price!" );
+            document.myForm.expiry.focus() ;
+            return false;
+         }
+         if( document.myForm.beans.value == "" )
+         {
+            alert( "Please provide beans price!" );
+            document.myForm.expiry.focus() ;
+            return false;
+         }
+         return( true );
+      }
+   //-->
+</script>
+	 <form name="myForm" method="post" onsubmit="return(validate());" action="/adminkiran">
+      <table BORDER=1 CELLSPACING=0>
+        <tr>
+          <th colspan="5">Vegetable price list per kg</th>
+        </tr>
+        <tr>
+          <th colspan="1">Onion</th>
+          <th colspan="1">Potato</th>
+          <th colspan="1">Tomato</th>
+          <th colspan="1">Cabbage</th>
+          <th colspan="1">Beans</th>
+        </tr>
+        <tr>
+          <td><input type="text" name="onion" value="{{c1.onion}}"></td>
+          <td><input type="text" name="potato" value="{{c1.potato}}"></td>
+          <td><input type="text" name="tomato" value="{{c1.tomato}}"></td>
+          <td><input type="text" name="cabbage" value="{{c1.cabbage}}"></td>
+          <td><input type="text" name="beans" value="{{c1.beans}}"></td>
+        </tr>
+      </table>
+      <br/>
+      <input type="submit" >
+    </form>
+</body>
+</html>
